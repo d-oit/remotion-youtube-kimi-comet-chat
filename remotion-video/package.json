@@ -12,6 +12,7 @@
     "build-segment2": "remotion render src/Root.tsx Segment2 out/segment2.mp4",
     "build-segment3": "remotion render src/Root.tsx Segment3 out/segment3.mp4",
     "build-outro": "remotion render src/Root.tsx Outro out/outro.mp4",
+    "build-thumbnail": "remotion still src/Root.tsx MainThumbnail out/thumbnail-main.png --overwrite",
     "typecheck": "tsc --noEmit"
   },
   "dependencies": {
