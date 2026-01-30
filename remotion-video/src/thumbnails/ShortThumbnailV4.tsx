@@ -2,16 +2,13 @@ import React from 'react';
 import { AbsoluteFill } from 'remotion';
 import { brandColors, createTextOutline } from './brand-palettes';
 
-// Kimi AI Brand-Compliant Shorts Thumbnail Component
-// Following Moonshot AI brand guidelines + 2026 best practices for Shorts
-
 const kimi = brandColors.kimi;
 
-export const ShortThumbnail: React.FC = () => {
+export const ShortThumbnailV4: React.FC = () => {
   return (
     <AbsoluteFill
       style={{
-        background: `linear-gradient(145deg, ${kimi.primary} 0%, ${kimi.secondary} 50%, ${kimi.dark} 100%)`,
+        background: `linear-gradient(160deg, ${kimi.primary} 0%, ${kimi.dark} 50%, ${kimi.secondary} 100%)`,
         display: 'flex',
         flexDirection: 'column',
         justifyContent: 'center',
@@ -21,23 +18,23 @@ export const ShortThumbnail: React.FC = () => {
         position: 'relative',
       }}
     >
-      {/* Background glow effects */}
+      {/* Radial glow effects */}
       <div
         style={{
           position: 'absolute',
           inset: 0,
           backgroundImage: `
-            radial-gradient(circle at 20% 80%, ${kimi.highlight}25 0%, transparent 50%),
-            radial-gradient(circle at 80% 20%, ${kimi.accent}20 0%, transparent 50%)
+            radial-gradient(circle at 30% 70%, ${kimi.highlight}20 0%, transparent 50%),
+            radial-gradient(circle at 70% 30%, ${kimi.accent}15 0%, transparent 50%)
           `,
         }}
       />
 
-      {/* TOP TEXT - 2 words max for Shorts (2026 best practice) */}
+      {/* Top section - SECRET METHOD */}
       <div
         style={{
           position: 'absolute',
-          top: '7%',
+          top: '5%',
           textAlign: 'center',
           width: '100%',
           zIndex: 10,
@@ -45,19 +42,33 @@ export const ShortThumbnail: React.FC = () => {
       >
         <div
           style={{
-            fontSize: '46px',
+            fontSize: '58px',
+            fontWeight: 900,
+            color: kimi.highlight,
+            textTransform: 'uppercase',
+            letterSpacing: '4px',
+            ...createTextOutline(kimi.dark, 5),
+            textShadow: `0 0 30px ${kimi.highlight}60`,
+          }}
+        >
+          SECRET
+        </div>
+        <div
+          style={{
+            fontSize: '54px',
             fontWeight: 900,
             color: kimi.white,
             textTransform: 'uppercase',
             letterSpacing: '4px',
-            ...createTextOutline(kimi.dark, 3),
+            marginTop: '-8px',
+            ...createTextOutline(kimi.dark, 4),
           }}
         >
-          AI HACK
+          METHOD
         </div>
       </div>
 
-      {/* Price Comparison - Center focal point */}
+      {/* Center section - Price comparison */}
       <div
         style={{
           position: 'relative',
@@ -65,43 +76,43 @@ export const ShortThumbnail: React.FC = () => {
           flexDirection: 'column',
           alignItems: 'center',
           justifyContent: 'center',
-          gap: '12px',
+          gap: '15px',
           zIndex: 10,
         }}
       >
-        {/* Old Price with strikethrough - Kimi danger red */}
+        {/* Old price strikethrough */}
         <div
           style={{
             position: 'relative',
-            fontSize: '68px',
+            fontSize: '56px',
             fontWeight: 800,
             color: kimi.gray,
             textDecoration: 'line-through',
             textDecorationColor: kimi.danger,
-            textDecorationThickness: '8px',
-            opacity: 0.8,
+            textDecorationThickness: '10px',
+            opacity: 0.7,
             ...createTextOutline(kimi.dark, 2),
           }}
         >
           $9.99
         </div>
 
-        {/* Lightning bolt visual cue (2026 best practice) */}
+        {/* Left arrow animation */}
         <div
           style={{
             position: 'absolute',
-            right: '-130px',
+            left: '-140px',
             top: '15%',
             fontSize: '90px',
-            filter: `drop-shadow(0 0 25px ${kimi.highlight})`,
-            ...createTextOutline(kimi.dark, 2),
-            animation: 'pulse 1.5s ease-in-out infinite',
+            filter: `drop-shadow(0 0 30px ${kimi.accent})`,
+            ...createTextOutline(kimi.dark, 3),
+            animation: 'slideLeft 1.5s ease-in-out infinite',
           }}
         >
-          ⚡
+          ←
         </div>
 
-        {/* NEW PRICE - Main focal point with circle cue */}
+        {/* NEW PRICE with enhanced circle */}
         <div
           style={{
             position: 'relative',
@@ -110,33 +121,31 @@ export const ShortThumbnail: React.FC = () => {
             justifyContent: 'center',
           }}
         >
-          {/* Yellow circle around price - 2026 best practice (+25% CTR) */}
           <div
             style={{
               position: 'absolute',
-              width: '280px',
-              height: '280px',
-              border: `8px solid ${kimi.highlight}`,
+              width: '320px',
+              height: '320px',
+              border: `10px solid ${kimi.accent}`,
               borderRadius: '50%',
               boxShadow: `
-                0 0 50px ${kimi.highlight},
-                inset 0 0 50px ${kimi.highlight}40,
-                0 0 100px ${kimi.highlight}60
+                0 0 70px ${kimi.accent},
+                inset 0 0 70px ${kimi.accent}40,
+                0 0 120px ${kimi.accent}60
               `,
             }}
           />
 
-          {/* $0.99 - Cyan with glow */}
           <span
             style={{
-              fontSize: '150px',
+              fontSize: '170px',
               fontWeight: 900,
-              color: kimi.accent,
-              ...createTextOutline(kimi.dark, 5),
+              color: kimi.highlight,
+              ...createTextOutline(kimi.dark, 6),
               textShadow: `
-                0 0 40px ${kimi.accent},
-                0 0 80px ${kimi.accent},
-                0 0 120px ${kimi.accent}80
+                0 0 50px ${kimi.highlight},
+                0 0 100px ${kimi.highlight},
+                0 0 150px ${kimi.highlight}60
               `,
             }}
           >
@@ -144,102 +153,74 @@ export const ShortThumbnail: React.FC = () => {
           </span>
         </div>
 
-        {/* Per month label */}
+        {/* KIMI AI label */}
         <div
           style={{
-            fontSize: '40px',
-            fontWeight: 800,
-            color: kimi.white,
-            ...createTextOutline(kimi.dark, 2),
-            marginTop: '-5px',
-          }}
-        >
-          PER MONTH
-        </div>
-
-        {/* KIMI label */}
-        <div
-          style={{
-            fontSize: '34px',
+            fontSize: '36px',
             fontWeight: 900,
-            color: kimi.highlight,
+            color: kimi.accent,
             ...createTextOutline(kimi.dark, 2),
-            letterSpacing: '3px',
-            marginTop: '5px',
+            letterSpacing: '4px',
+            marginTop: '-10px',
           }}
         >
-          KIMI AI
+          KIMI AI HACK
         </div>
       </div>
 
-      {/* BOTTOM CTA - Shorts optimized */}
+      {/* Bottom CTA section */}
       <div
         style={{
           position: 'absolute',
-          bottom: '7%',
+          bottom: '5%',
           display: 'flex',
           flexDirection: 'column',
           alignItems: 'center',
-          gap: '8px',
+          gap: '10px',
           zIndex: 10,
         }}
       >
-        {/* CTA button with high contrast */}
         <div
           style={{
-            fontSize: '30px',
+            fontSize: '36px',
             fontWeight: 900,
             color: kimi.dark,
             background: kimi.highlight,
-            padding: '16px 45px',
+            padding: '18px 55px',
             borderRadius: '50px',
-            ...createTextOutline(kimi.white, 1),
+            ...createTextOutline(kimi.white, 2),
             boxShadow: `
-              0 0 35px ${kimi.highlight},
-              0 6px 25px rgba(0,0,0,0.4)
+              0 0 40px ${kimi.highlight},
+              0 8px 30px rgba(0,0,0,0.4)
             `,
           }}
         >
-          TAP HERE
+          SWIPE UP
         </div>
         
-        {/* Down arrow */}
         <div
           style={{
-            fontSize: '44px',
+            fontSize: '48px',
             color: kimi.white,
-            ...createTextOutline(kimi.dark, 2),
+            ...createTextOutline(kimi.dark, 3),
             filter: 'drop-shadow(0 0 10px rgba(0,0,0,0.5))',
-            animation: 'bounce 1.2s ease-in-out infinite',
+            animation: 'bounce 1s ease-in-out infinite',
           }}
         >
           ↓
         </div>
       </div>
 
-      {/* Sparkle visual cues */}
-      <div
-        style={{
-          position: 'absolute',
-          left: '7%',
-          top: '18%',
-          fontSize: '48px',
-          color: kimi.highlight,
-          ...createTextOutline(kimi.dark, 1),
-          filter: `drop-shadow(0 0 20px ${kimi.highlight})`,
-        }}
-      >
-        ✦
-      </div>
+      {/* Sparkle decorations */}
       <div
         style={{
           position: 'absolute',
           right: '8%',
-          bottom: '22%',
-          fontSize: '42px',
-          color: kimi.accent,
+          top: '16%',
+          fontSize: '52px',
+          color: kimi.highlight,
           ...createTextOutline(kimi.dark, 1),
-          filter: `drop-shadow(0 0 20px ${kimi.accent})`,
+          filter: `drop-shadow(0 0 25px ${kimi.highlight})`,
         }}
       >
         ✦
@@ -247,24 +228,37 @@ export const ShortThumbnail: React.FC = () => {
       <div
         style={{
           position: 'absolute',
-          left: '10%',
-          bottom: '32%',
-          fontSize: '32px',
+          left: '7%',
+          bottom: '20%',
+          fontSize: '44px',
+          color: kimi.accent,
+          ...createTextOutline(kimi.dark, 1),
+          filter: `drop-shadow(0 0 25px ${kimi.accent})`,
+        }}
+      >
+        ✦
+      </div>
+      <div
+        style={{
+          position: 'absolute',
+          right: '12%',
+          bottom: '30%',
+          fontSize: '34px',
           color: kimi.white,
           ...createTextOutline(kimi.dark, 1),
-          filter: 'drop-shadow(0 0 15px rgba(255,255,255,0.8))',
+          filter: 'drop-shadow(0 0 20px rgba(255,255,255,0.8))',
         }}
       >
         ✦
       </div>
 
-      {/* Mobile safe zone - 9:16 crop area for Shorts */}
+      {/* Mobile safe zone for Shorts (9:16 aspect) */}
       <div
         style={{
           position: 'absolute',
           width: '405px',
           height: '720px',
-          border: '3px dashed rgba(255,255,255,0.12)',
+          border: '3px dashed rgba(255,255,255,0.1)',
           pointerEvents: 'none',
           top: '50%',
           left: '50%',
@@ -273,13 +267,13 @@ export const ShortThumbnail: React.FC = () => {
         }}
       />
 
-      {/* 16:9 full frame indicator */}
+      {/* Full frame border */}
       <div
         style={{
           position: 'absolute',
           width: '1280px',
           height: '720px',
-          border: '2px solid rgba(255,255,255,0.06)',
+          border: '2px solid rgba(255,255,255,0.05)',
           pointerEvents: 'none',
           top: '50%',
           left: '50%',
@@ -287,19 +281,18 @@ export const ShortThumbnail: React.FC = () => {
         }}
       />
 
-      {/* CSS Animations */}
       <style>{`
-        @keyframes pulse {
-          0%, 100% { transform: scale(1); opacity: 1; }
-          50% { transform: scale(1.1); opacity: 0.9; }
+        @keyframes slideLeft {
+          0%, 100% { transform: translateX(0); opacity: 1; }
+          50% { transform: translateX(-15px); opacity: 0.8; }
         }
         @keyframes bounce {
           0%, 100% { transform: translateY(0); }
-          50% { transform: translateY(12px); }
+          50% { transform: translateY(15px); }
         }
       `}</style>
     </AbsoluteFill>
   );
 };
 
-export default ShortThumbnail;
+export default ShortThumbnailV4;

@@ -2,12 +2,9 @@ import React from 'react';
 import { AbsoluteFill } from 'remotion';
 import { brandColors, createTextOutline } from './brand-palettes';
 
-// Kimi AI Brand-Compliant Thumbnail Component
-// Following Moonshot AI brand guidelines + 2026 best practices
-
 const kimi = brandColors.kimi;
 
-export const MainThumbnail: React.FC = () => {
+export const MainThumbnailV3: React.FC = () => {
   return (
     <AbsoluteFill
       style={{
@@ -19,7 +16,6 @@ export const MainThumbnail: React.FC = () => {
         fontFamily: '"Inter", "SF Pro Display", -apple-system, BlinkMacSystemFont, sans-serif',
       }}
     >
-      {/* Tech grid pattern - subtle brand element */}
       <div
         style={{
           position: 'absolute',
@@ -33,7 +29,6 @@ export const MainThumbnail: React.FC = () => {
         }}
       />
 
-      {/* Purple glow - brand accent */}
       <div
         style={{
           position: 'absolute',
@@ -47,7 +42,6 @@ export const MainThumbnail: React.FC = () => {
         }}
       />
 
-      {/* Main Content Container - Single focal point design */}
       <div
         style={{
           display: 'flex',
@@ -58,7 +52,6 @@ export const MainThumbnail: React.FC = () => {
           position: 'relative',
         }}
       >
-        {/* KIMI AI Logo Text - 3 words max (2026 best practice) */}
         <div
           style={{
             display: 'flex',
@@ -80,11 +73,10 @@ export const MainThumbnail: React.FC = () => {
               ...createTextOutline(kimi.dark, 3),
             }}
           >
-            KIMI AI
+            AGENT SWARM
           </span>
         </div>
 
-        {/* Price Display - Central focal point with visual cue circle */}
         <div
           style={{
             position: 'relative',
@@ -94,34 +86,32 @@ export const MainThumbnail: React.FC = () => {
             marginTop: '8px',
           }}
         >
-          {/* Yellow circle visual cue - 2026 best practice (+25% CTR) */}
           <div
             style={{
               position: 'absolute',
-              width: '300px',
-              height: '300px',
-              border: `6px solid ${kimi.highlight}`,
+              width: '320px',
+              height: '320px',
+              border: `6px solid ${kimi.accent}`,
               borderRadius: '50%',
               boxShadow: `
-                0 0 40px ${kimi.highlight},
-                inset 0 0 40px ${kimi.highlight}30,
-                0 0 80px ${kimi.highlight}50
+                0 0 40px ${kimi.accent},
+                inset 0 0 40px ${kimi.accent}30,
+                0 0 80px ${kimi.accent}50
               `,
             }}
           />
 
-          {/* $0.99 - Large cyan text with glow (Kimi accent color) */}
           <span
             style={{
-              fontSize: '190px',
+              fontSize: '180px',
               fontWeight: 900,
-              color: kimi.accent,
+              color: kimi.highlight,
               lineHeight: 1,
               ...createTextOutline(kimi.dark, 5),
               textShadow: `
-                0 0 40px ${kimi.accent},
-                0 0 80px ${kimi.accent}80,
-                0 0 120px ${kimi.accent}40
+                0 0 40px ${kimi.highlight},
+                0 0 80px ${kimi.highlight}80,
+                0 0 120px ${kimi.highlight}40
               `,
             }}
           >
@@ -129,7 +119,6 @@ export const MainThumbnail: React.FC = () => {
           </span>
         </div>
 
-        {/* Strikethrough old price with Kimi danger red */}
         <div
           style={{
             display: 'flex',
@@ -146,7 +135,7 @@ export const MainThumbnail: React.FC = () => {
               ...createTextOutline(kimi.dark, 2),
             }}
           >
-            NOT
+            INSTEAD OF
           </span>
           <span
             style={{
@@ -163,16 +152,15 @@ export const MainThumbnail: React.FC = () => {
           </span>
         </div>
 
-        {/* Bottom CTA - 2 words max (2026 best practice) */}
         <div
           style={{
             marginTop: '24px',
             padding: '18px 45px',
-            background: `linear-gradient(135deg, ${kimi.primary} 0%, ${kimi.secondary} 100%)`,
+            background: `linear-gradient(135deg, ${kimi.accent} 0%, ${kimi.primary} 100%)`,
             borderRadius: '10px',
-            border: `3px solid ${kimi.highlight}`,
+            border: `3px solid ${kimi.white}`,
             boxShadow: `
-              0 0 30px ${kimi.primary}60,
+              0 0 30px ${kimi.accent}60,
               0 8px 30px rgba(0,0,0,0.4)
             `,
           }}
@@ -181,17 +169,16 @@ export const MainThumbnail: React.FC = () => {
             style={{
               fontSize: '40px',
               fontWeight: 900,
-              color: kimi.white,
+              color: kimi.dark,
               letterSpacing: '3px',
-              ...createTextOutline(kimi.dark, 3),
+              ...createTextOutline(kimi.white, 3),
             }}
           >
-            AGENT DEAL
+            UNBELIEVABLE
           </span>
         </div>
       </div>
 
-      {/* Visual cue: Arrow pointing to price (2026 best practice) */}
       <div
         style={{
           position: 'absolute',
@@ -207,33 +194,32 @@ export const MainThumbnail: React.FC = () => {
           viewBox="0 0 130 70"
           fill="none"
           style={{
-            filter: `drop-shadow(0 0 15px ${kimi.highlight})`,
+            filter: `drop-shadow(0 0 15px ${kimi.accent})`,
           }}
         >
           <path
             d="M10 35 L90 35 L90 15 L120 35 L90 55 L90 35"
-            stroke={kimi.highlight}
+            stroke={kimi.accent}
             strokeWidth="7"
             strokeLinecap="round"
             strokeLinejoin="round"
-            fill={kimi.highlight}
+            fill={kimi.accent}
           />
         </svg>
         <div
           style={{
             fontSize: '26px',
             fontWeight: 800,
-            color: kimi.highlight,
+            color: kimi.accent,
             textAlign: 'center',
             marginTop: '8px',
             ...createTextOutline(kimi.dark, 2),
           }}
         >
-          SAVE!
+          VALUE!
         </div>
       </div>
 
-      {/* Visual cue: Sparkle effects (2026 best practice) */}
       <div
         style={{
           position: 'absolute',
@@ -266,15 +252,14 @@ export const MainThumbnail: React.FC = () => {
           left: '180px',
           top: '28%',
           fontSize: '35px',
-          color: kimi.highlight,
-          filter: `drop-shadow(0 0 15px ${kimi.highlight})`,
+          color: kimi.primary,
+          filter: `drop-shadow(0 0 15px ${kimi.primary})`,
           ...createTextOutline(kimi.dark, 1),
         }}
       >
         ✦
       </div>
 
-      {/* Corner brand elements */}
       <div
         style={{
           position: 'absolute',
@@ -282,11 +267,11 @@ export const MainThumbnail: React.FC = () => {
           right: '35px',
           width: '90px',
           height: '90px',
-          border: `3px solid ${kimi.primary}`,
+          border: `3px solid ${kimi.accent}`,
           borderRadius: '14px',
           opacity: 0.5,
           transform: 'rotate(45deg)',
-          boxShadow: `0 0 20px ${kimi.primary}40`,
+          boxShadow: `0 0 20px ${kimi.accent}40`,
         }}
       />
       <div
@@ -296,15 +281,14 @@ export const MainThumbnail: React.FC = () => {
           left: '35px',
           width: '90px',
           height: '90px',
-          border: `3px solid ${kimi.accent}`,
+          border: `3px solid ${kimi.primary}`,
           borderRadius: '14px',
           opacity: 0.4,
           transform: 'rotate(45deg)',
-          boxShadow: `0 0 20px ${kimi.accent}40`,
+          boxShadow: `0 0 20px ${kimi.primary}40`,
         }}
       />
 
-      {/* Mobile safe zone indicator */}
       <div
         style={{
           position: 'absolute',
@@ -322,4 +306,4 @@ export const MainThumbnail: React.FC = () => {
   );
 };
 
-export default MainThumbnail;
+export default MainThumbnailV3;

@@ -189,7 +189,10 @@ Examples:
             filename = os.path.basename(local_path)
             if args.remote_path:
                 # Use remote_path as destination folder
-                remote_path = f"{args.remote_path}/{filename}"
+                remote_path = args.remote_path.replace("\\", "/")
+                if not remote_path.startswith("/"):
+                    remote_path = "/" + remote_path
+                remote_path = f"{remote_path}/{filename}"
             else:
                 # Use filename as remote path
                 remote_path = f"/{filename}"

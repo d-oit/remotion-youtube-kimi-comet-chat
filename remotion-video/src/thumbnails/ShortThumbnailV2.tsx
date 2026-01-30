@@ -2,12 +2,9 @@ import React from 'react';
 import { AbsoluteFill } from 'remotion';
 import { brandColors, createTextOutline } from './brand-palettes';
 
-// Kimi AI Brand-Compliant Shorts Thumbnail Component
-// Following Moonshot AI brand guidelines + 2026 best practices for Shorts
-
 const kimi = brandColors.kimi;
 
-export const ShortThumbnail: React.FC = () => {
+export const ShortThumbnailV2: React.FC = () => {
   return (
     <AbsoluteFill
       style={{
@@ -21,7 +18,6 @@ export const ShortThumbnail: React.FC = () => {
         position: 'relative',
       }}
     >
-      {/* Background glow effects */}
       <div
         style={{
           position: 'absolute',
@@ -33,7 +29,6 @@ export const ShortThumbnail: React.FC = () => {
         }}
       />
 
-      {/* TOP TEXT - 2 words max for Shorts (2026 best practice) */}
       <div
         style={{
           position: 'absolute',
@@ -53,11 +48,10 @@ export const ShortThumbnail: React.FC = () => {
             ...createTextOutline(kimi.dark, 3),
           }}
         >
-          AI HACK
+          SECRET METHOD
         </div>
       </div>
 
-      {/* Price Comparison - Center focal point */}
       <div
         style={{
           position: 'relative',
@@ -69,7 +63,6 @@ export const ShortThumbnail: React.FC = () => {
           zIndex: 10,
         }}
       >
-        {/* Old Price with strikethrough - Kimi danger red */}
         <div
           style={{
             position: 'relative',
@@ -83,10 +76,9 @@ export const ShortThumbnail: React.FC = () => {
             ...createTextOutline(kimi.dark, 2),
           }}
         >
-          $9.99
+          REGULAR PRICE
         </div>
 
-        {/* Lightning bolt visual cue (2026 best practice) */}
         <div
           style={{
             position: 'absolute',
@@ -101,7 +93,6 @@ export const ShortThumbnail: React.FC = () => {
           ⚡
         </div>
 
-        {/* NEW PRICE - Main focal point with circle cue */}
         <div
           style={{
             position: 'relative',
@@ -110,7 +101,6 @@ export const ShortThumbnail: React.FC = () => {
             justifyContent: 'center',
           }}
         >
-          {/* Yellow circle around price - 2026 best practice (+25% CTR) */}
           <div
             style={{
               position: 'absolute',
@@ -126,7 +116,6 @@ export const ShortThumbnail: React.FC = () => {
             }}
           />
 
-          {/* $0.99 - Cyan with glow */}
           <span
             style={{
               fontSize: '150px',
@@ -144,7 +133,6 @@ export const ShortThumbnail: React.FC = () => {
           </span>
         </div>
 
-        {/* Per month label */}
         <div
           style={{
             fontSize: '40px',
@@ -154,10 +142,9 @@ export const ShortThumbnail: React.FC = () => {
             marginTop: '-5px',
           }}
         >
-          PER MONTH
+          MONTHLY
         </div>
 
-        {/* KIMI label */}
         <div
           style={{
             fontSize: '34px',
@@ -168,11 +155,10 @@ export const ShortThumbnail: React.FC = () => {
             marginTop: '5px',
           }}
         >
-          KIMI AI
+          KIMI AI HACK
         </div>
       </div>
 
-      {/* BOTTOM CTA - Shorts optimized */}
       <div
         style={{
           position: 'absolute',
@@ -184,7 +170,6 @@ export const ShortThumbnail: React.FC = () => {
           zIndex: 10,
         }}
       >
-        {/* CTA button with high contrast */}
         <div
           style={{
             fontSize: '30px',
@@ -200,10 +185,9 @@ export const ShortThumbnail: React.FC = () => {
             `,
           }}
         >
-          TAP HERE
+          SWIPE UP
         </div>
         
-        {/* Down arrow */}
         <div
           style={{
             fontSize: '44px',
@@ -217,7 +201,6 @@ export const ShortThumbnail: React.FC = () => {
         </div>
       </div>
 
-      {/* Sparkle visual cues */}
       <div
         style={{
           position: 'absolute',
@@ -258,7 +241,6 @@ export const ShortThumbnail: React.FC = () => {
         ✦
       </div>
 
-      {/* Mobile safe zone - 9:16 crop area for Shorts */}
       <div
         style={{
           position: 'absolute',
@@ -273,7 +255,6 @@ export const ShortThumbnail: React.FC = () => {
         }}
       />
 
-      {/* 16:9 full frame indicator */}
       <div
         style={{
           position: 'absolute',
@@ -287,7 +268,6 @@ export const ShortThumbnail: React.FC = () => {
         }}
       />
 
-      {/* CSS Animations */}
       <style>{`
         @keyframes pulse {
           0%, 100% { transform: scale(1); opacity: 1; }
@@ -302,4 +282,4 @@ export const ShortThumbnail: React.FC = () => {
   );
 };
 
-export default ShortThumbnail;
+export default ShortThumbnailV2;

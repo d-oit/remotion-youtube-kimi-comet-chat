@@ -20,6 +20,6 @@
       "@/*": ["src/*"]
     }
   },
-  "include": ["src", "remotion.config.ts", "vite.config.ts"],
+  "include": ["src", "remotion.config.ts"],
   "references": [{ "path": "./tsconfig.node.json" }]
 }

@@ -2,12 +2,9 @@ import React from 'react';
 import { AbsoluteFill } from 'remotion';
 import { brandColors, createTextOutline } from './brand-palettes';
 
-// Kimi AI Brand-Compliant Thumbnail Component
-// Following Moonshot AI brand guidelines + 2026 best practices
-
 const kimi = brandColors.kimi;
 
-export const MainThumbnail: React.FC = () => {
+export const MainThumbnailV2: React.FC = () => {
   return (
     <AbsoluteFill
       style={{
@@ -19,7 +16,6 @@ export const MainThumbnail: React.FC = () => {
         fontFamily: '"Inter", "SF Pro Display", -apple-system, BlinkMacSystemFont, sans-serif',
       }}
     >
-      {/* Tech grid pattern - subtle brand element */}
       <div
         style={{
           position: 'absolute',
@@ -33,7 +29,6 @@ export const MainThumbnail: React.FC = () => {
         }}
       />
 
-      {/* Purple glow - brand accent */}
       <div
         style={{
           position: 'absolute',
@@ -47,7 +42,6 @@ export const MainThumbnail: React.FC = () => {
         }}
       />
 
-      {/* Main Content Container - Single focal point design */}
       <div
         style={{
           display: 'flex',
@@ -58,17 +52,16 @@ export const MainThumbnail: React.FC = () => {
           position: 'relative',
         }}
       >
-        {/* KIMI AI Logo Text - 3 words max (2026 best practice) */}
         <div
           style={{
             display: 'flex',
             alignItems: 'center',
             gap: '12px',
             padding: '14px 28px',
-            background: `linear-gradient(135deg, ${kimi.primary}30 0%, ${kimi.secondary}40 100%)`,
+            background: `linear-gradient(135deg, ${kimi.accent}30 0%, ${kimi.highlight}40 100%)`,
             borderRadius: '12px',
-            border: `3px solid ${kimi.primary}`,
-            boxShadow: `0 0 40px ${kimi.primary}50`,
+            border: `3px solid ${kimi.accent}`,
+            boxShadow: `0 0 40px ${kimi.accent}50`,
           }}
         >
           <span
@@ -80,11 +73,10 @@ export const MainThumbnail: React.FC = () => {
               ...createTextOutline(kimi.dark, 3),
             }}
           >
-            KIMI AI
+            90% OFF
           </span>
         </div>
 
-        {/* Price Display - Central focal point with visual cue circle */}
         <div
           style={{
             position: 'relative',
@@ -94,7 +86,6 @@ export const MainThumbnail: React.FC = () => {
             marginTop: '8px',
           }}
         >
-          {/* Yellow circle visual cue - 2026 best practice (+25% CTR) */}
           <div
             style={{
               position: 'absolute',
@@ -110,7 +101,6 @@ export const MainThumbnail: React.FC = () => {
             }}
           />
 
-          {/* $0.99 - Large cyan text with glow (Kimi accent color) */}
           <span
             style={{
               fontSize: '190px',
@@ -129,7 +119,6 @@ export const MainThumbnail: React.FC = () => {
           </span>
         </div>
 
-        {/* Strikethrough old price with Kimi danger red */}
         <div
           style={{
             display: 'flex',
@@ -146,7 +135,7 @@ export const MainThumbnail: React.FC = () => {
               ...createTextOutline(kimi.dark, 2),
             }}
           >
-            NOT
+            WAS
           </span>
           <span
             style={{
@@ -163,7 +152,6 @@ export const MainThumbnail: React.FC = () => {
           </span>
         </div>
 
-        {/* Bottom CTA - 2 words max (2026 best practice) */}
         <div
           style={{
             marginTop: '24px',
@@ -186,12 +174,11 @@ export const MainThumbnail: React.FC = () => {
               ...createTextOutline(kimi.dark, 3),
             }}
           >
-            AGENT DEAL
+            LIMITED TIME
           </span>
         </div>
       </div>
 
-      {/* Visual cue: Arrow pointing to price (2026 best practice) */}
       <div
         style={{
           position: 'absolute',
@@ -229,11 +216,10 @@ export const MainThumbnail: React.FC = () => {
             ...createTextOutline(kimi.dark, 2),
           }}
         >
-          SAVE!
+          DEAL!
         </div>
       </div>
 
-      {/* Visual cue: Sparkle effects (2026 best practice) */}
       <div
         style={{
           position: 'absolute',
@@ -274,7 +260,6 @@ export const MainThumbnail: React.FC = () => {
         ✦
       </div>
 
-      {/* Corner brand elements */}
       <div
         style={{
           position: 'absolute',
@@ -304,7 +289,6 @@ export const MainThumbnail: React.FC = () => {
         }}
       />
 
-      {/* Mobile safe zone indicator */}
       <div
         style={{
           position: 'absolute',
@@ -322,4 +306,4 @@ export const MainThumbnail: React.FC = () => {
   );
 };
 
-export default MainThumbnail;
+export default MainThumbnailV2;

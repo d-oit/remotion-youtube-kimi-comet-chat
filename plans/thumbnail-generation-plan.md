@@ -1,5 +1,7 @@
 # Thumbnail Generation Plan: Kimi Comet Chat Videos
 
+> **Agent Skill**: This plan uses the `@skills/brand-compliant-thumbnails/` agent skill for creating brand-compliant, high-CTR YouTube thumbnails. See `skills/brand-compliant-thumbnails/SKILL.md` for implementation details, color palettes, and 2026 best practices.
+
 ## Goal
 Create high-converting YouTube thumbnails for both videos:
 1. **Main Video** (10-min tutorial): 1280x720 pixels (16:9)
@@ -35,15 +37,17 @@ Create high-converting YouTube thumbnails for both videos:
 
 ### Agent 1: Thumbnail Designer & Generator
 - **Task**: Create both thumbnail images using Remotion/React components
+- **Skill**: `@skills/brand-compliant-thumbnails/` - Use this skill for brand-compliant design with 2026 best practices
 - **Input**: 
   - Video metadata from `plans/agent-outputs/youtube-metadata/`
-  - Color palette: `#667eea` (primary), `#764ba2` (secondary), `#0a0a0f` (background)
-  - Fonts: system-ui with bold weights
+  - Brand colors from skill: `#667eea` (Kimi Purple), `#00d4ff` (Kimi Cyan), `#ffd700` (Kimi Gold), `#0d1117` (Dark BG)
+  - 2026 best practices: 3-5 words max, bold outlines (3-5px), visual cues
+  - Fonts: system-ui with bold weights (700-900)
 - **Output**: 
   - `thumbnail-main.png` (1280x720)
   - `thumbnail-short.png` (1280x720)
   - Location: `remotion-video/out/`
-- **Tech**: Remotion components (similar to existing video project)
+- **Tech**: Remotion components with brand-compliant-thumbnails skill patterns
 - **Parallel**: YES (works independently)
 
 ### Agent 2: Dropbox Uploader
@@ -116,18 +120,26 @@ Phase 3:
 - File Size: <2MB
 - Color Space: RGB
 
-## Color Palette
+## Color Palette (Brand-Compliant)
+
+From `@skills/brand-compliant-thumbnails/SKILL.md` - Kimi AI Official Brand Colors:
+
 ```typescript
-const colors = {
-  primary: '#667eea',
-  secondary: '#764ba2',
-  accent: '#00ffff', // cyan for $0.99
-  background: '#0a0a0f',
-  backgroundLight: '#1a1a2e',
+const kimiColors = {
+  primary: '#667eea',        // Kimi Purple - Primary brand color
+  secondary: '#764ba2',      // Deep Purple - Gradients
+  accent: '#00d4ff',         // Kimi Cyan - Price highlights
+  highlight: '#ffd700',      // Kimi Gold - CTAs, visual cues
+  background: '#0d1117',     // Kimi Dark - Backgrounds
   white: '#ffffff',
-  pink: '#f093fb',
+  black: '#000000',
 };
 ```
+
+**2026 CTR Best Practices Colors**:
+- Cyan (#00d4ff) + Gold (#ffd700): +30% engagement
+- High contrast on dark backgrounds for mobile readability
+- See skill doc for Anthropic brand colors (Dialogue Aqua #4cc9f0, Safety Gold #ffd166)
 
 ## Output Locations
 
@@ -146,16 +158,22 @@ const colors = {
 ## Reference Files
 
 All agents need access to:
+- `skills/brand-compliant-thumbnails/SKILL.md` - **PRIMARY SKILL** for thumbnail creation with brand guidelines and 2026 best practices
 - `AGENTS.md` - Project guidelines and color palette
 - `plans/agent-outputs/youtube-metadata/main-video.md` - Main video metadata
 - `plans/agent-outputs/youtube-metadata/short-video.md` - Short video metadata
+- `plans/references/2026-thumbnail-best-practices.md` - Detailed 2026 design research
 - `remotion-video/src/` - Existing Remotion components for reference
 - `VIDEOS.md` - Video URLs and Dropbox links
 
 ## Implementation Approach
 
-**Option A: Remotion-based (Recommended)**
+**Option A: Remotion-based with Brand-Compliant Skill (Recommended)**
 - Create thumbnail components using existing Remotion setup
+- Apply `@skills/brand-compliant-thumbnails/` patterns for:
+  - Brand colors (Kimi AI/Anthropic official palettes)
+  - 2026 best practices (3-5 words, bold outlines, visual cues)
+  - Mobile-optimized designs (1280x720, safe zones)
 - Use `still()` export to generate static PNG
 - Leverages existing color palette and animation utilities
 
@@ -164,7 +182,7 @@ All agents need access to:
 - Use puppeteer or similar to capture screenshot
 - Simpler but less consistent with brand
 
-**Selected**: Option A (Remotion) - maintains consistency with video project
+**Selected**: Option A (Remotion + brand-compliant-thumbnails skill) - maintains consistency with video project and follows 2026 CTR best practices
 
 ## Estimated Timeline
 

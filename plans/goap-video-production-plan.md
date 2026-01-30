@@ -58,12 +58,25 @@ CURRENT_STATE: {
 
 | Skill | Type | Purpose | Mode |
 |-------|------|---------|------|
+| `brand-compliant-thumbnails` | **Thumbnail** | **YouTube thumbnails with brand guidelines** | **Single** |
 | `vercel-react-best-practices` | Composition | React/Remotion patterns | Single |
 | `vercel-composition-patterns` | Component | Reusable component design | Single |
 | `remotion-best-practices` | Animation | Smooth animations, timing | Single |
 | `pptx-reader` | Data | Extract PPTX content | Single |
 | `browser-automation` | Testing | Verify video playback | Single |
 | `code-reviewer` | Quality | Code review | Single |
+
+### New: Brand-Compliant Thumbnails Skill
+
+**Location**: `skills/brand-compliant-thumbnails/SKILL.md`
+
+**Purpose**: Create high-CTR YouTube thumbnails following:
+- Kimi AI brand colors (Moonshot guidelines)
+- Anthropic/Comet brand colors (Geist design)
+- 2026 thumbnail best practices (3-5 words, bold outlines, visual cues)
+- Mobile-optimized designs (1280x720, safe zones)
+
+**Use for**: All thumbnail generation tasks to ensure brand compliance and maximum CTR
 
 ### Swarm Skills (Multiple Agents)
 
@@ -193,13 +206,19 @@ actions:
 
 ### Task 4: Thumbnail Generation
 
+> **Uses Skill**: `@skills/brand-compliant-thumbnails/` for brand-compliant, high-CTR thumbnails
+
 ```yaml
 task: CREATE_THUMBNAIL
 mode: single
+skill: brand-compliant-thumbnails
 actions:
-  - generate: "thumbnail.png" (1280x720)
+  - generate: "thumbnail.png" (1280x720) using brand-compliant-thumbnails skill
+  - apply: 2026 best practices (3-5 words, bold outlines, visual cues)
+  - use: Kimi brand colors (#667eea, #00d4ff, #ffd700)
   - create: "youtube-description.md"
   - create: "video-metadata.json"
+reference: skills/brand-compliant-thumbnails/SKILL.md
 ```
 
 ---

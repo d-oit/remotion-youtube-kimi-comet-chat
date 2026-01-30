@@ -72,8 +72,13 @@ Phase 3:
 
 All agents need access to:
 - `AGENTS.md` - Project guidelines and tech stack
+- `skills/brand-compliant-thumbnails/SKILL.md` - For thumbnail creation (if needed during upload phase)
+- `plans/thumbnail-generation-plan.md` - Thumbnail generation coordination
 - `remotion-video/src/compositions/FullVideo.tsx` - Video structure for timestamps
 - `remotion-video/src/Root.tsx` - Video duration info
+
+## Related Plans
+- **Thumbnail Generation**: See `plans/thumbnail-generation-plan.md` (uses `@skills/brand-compliant-thumbnails/` skill)
 
 ## Output Locations
 

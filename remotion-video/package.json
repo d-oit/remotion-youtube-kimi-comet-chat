@@ -13,6 +13,14 @@
     "build-segment3": "remotion render src/Root.tsx Segment3 out/segment3.mp4",
     "build-outro": "remotion render src/Root.tsx Outro out/outro.mp4",
     "build-thumbnail": "remotion still src/Root.tsx MainThumbnail out/thumbnail-main.png --overwrite",
+    "build-thumbnail-short": "remotion still src/Root.tsx ShortThumbnail out/thumbnail-short.png --overwrite",
+    "build-thumbnail-v3": "remotion still src/Root.tsx MainThumbnailV3 out/thumbnail-main.png --overwrite",
+    "build-thumbnail-short-v3": "remotion still src/Root.tsx ShortThumbnailV3 out/thumbnail-short.png --overwrite",
+    "build-thumbnails-v3": "npm run build-thumbnail-v3 && npm run build-thumbnail-short-v3",
+    "build-thumbnail-v4": "remotion still src/Root.tsx MainThumbnailV4 out/thumbnail-main-v4.png --overwrite",
+    "build-thumbnail-short-v4": "remotion still src/Root.tsx ShortThumbnailV4 out/thumbnail-short-v4.png --overwrite",
+    "build-thumbnails-v4": "npm run build-thumbnail-v4 && npm run build-thumbnail-short-v4",
+    "build-all-thumbnails": "npm run build-thumbnails-v3 && npm run build-thumbnails-v4",
     "typecheck": "tsc --noEmit"
   },
   "dependencies": {
